@@ -1,17 +1,23 @@
 function findLargest(a, b, c) {
-  //your code here
-	if (a >= b && a >= c) {
-		return a;
-	} 
-	else if (b >= a && b >= c) {
-		return b;
-	} else {
-		return c;
-	}
+  if (a >= b && a >= c) {
+    if (b === c) {
+      return a; 
+    }
+    return a;  
+  } else if (b >= a && b >= c) {
+    if (a === c) {
+      return b; 
+    }
+    return b; 
+  }  
+    if (a === b) {
+      return c;
+    }
+    return c;
+   
 }
 
-
-const num1 = parseInt(prompt("Enter First Number."));
-const num2 = parseInt(prompt("Enter Second Number."));
-const num3 = parseInt(prompt("Enter Third Number."));
-alert(findLargest(num1, num2, num3));
+const a = parseFloat(prompt("Enter the First Number"));
+const b= parseFloat(prompt("Enter the Second Number"));
+const c = parseFloat(prompt("Enter the Third Number"));
+alert(findLargest(a, b, c));   
